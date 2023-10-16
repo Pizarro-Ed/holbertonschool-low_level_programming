@@ -1,27 +1,29 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
+/* more headers goes there */
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Sucess)
+ */
+int main(void)
+{
+	int n;
 
-int main() {
-    int n;
-
-    // Seed the random number generator
-    srand(time(NULL));
-
-    // Generate a random number and store it in n
-    n = rand() % (2 * RAND_MAX) - RAND_MAX;
-
-    // Print the random number
-    printf("The number is: %d\n", n);
-
-    // Check if the number is positive, zero, or negative
-    if (n > 0) {
-        printf("is positive\n");
-    } else if (n == 0) {
-        printf("is zero\n");
-    } else {
-        printf("is negative\n");
-    }
-
-    return 0;
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+	if (n > 0)
+	{
+		printf("%d is positive\n", n);
+	}
+	else if (n < 0)
+	{
+		printf("%d is negative\n", n);
+	}
+	else
+	{
+		printf("%d is zero\n", n);
+	}
+	return (0);
 }
